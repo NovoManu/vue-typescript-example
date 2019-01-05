@@ -1,0 +1,59 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.postChart {
+  @include prefix(position, sticky, webkit );
+  top: 70px;
+  &__placeholder {
+    height: 100%;
+    width: 100%;
+  }
+  canvas {
+    max-width: 100%;
+  }
+}
+.dropdown {
+  position: relative;
+  &__menu {
+    position: absolute !important;
+    top: 56px;
+    left: 0;
+    max-width: 100%;
+    z-index: 2;
+    background: white;
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: white;
+      z-index: -1;
+      top: -7px;
+      left: 12px;
+      @include perpendicular-borders;
+      @include prefix(transform, rotate(-45deg), webkit ms);
+      @include border-radius(2px);
+    }
+
+    &__item {
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+}
+
+.auth-transition-enter-active,
+.page-transition-enter-active,
+.page-transition-leave-active {
+  transition: opacity 0.3s ease;
+}
+.auth-transition-enter,
+.page-transition-enter,
+.page-transition-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,15 @@
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin border-radius($radius)  {
+  @include prefix(border-radius, $radius, 'webkit' 'moz' 'ms')
+}
+
+@mixin perpendicular-borders {
+  border-top: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+}
