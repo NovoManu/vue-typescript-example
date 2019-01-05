@@ -24,3 +24,8 @@ npm run test
 ```
 npm run lint
 ```
+
+### Format code using prettier
+```
+npm run format
+```
